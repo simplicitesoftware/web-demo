@@ -9,12 +9,15 @@ to connect to a Simplicité® demo backend instance from the **client-side**.
 
 Prerequisites:
 
-	sudo npm install -g browserify
-	sudo npm install -g uglify-js
+	sudo npm install -g browserify uglify-js watchify
 
 Install:
 
 	npm install
+
+Run in watch mode:
+
+	npm run watch
 
 Build:
 
