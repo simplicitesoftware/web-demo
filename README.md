@@ -4,7 +4,8 @@
 Web demo
 ========
 
-This project is a **very basic** web front-end demo using the Simplicit&eacute;&reg; node.js & browser library.
+This project is a **very basic** web front-end demo using the
+[Simplicit&eacute;&reg; node.js & browser library](https://github.com/simplicitesoftware/nodejs-api).
 
 Prerequisites:
 
