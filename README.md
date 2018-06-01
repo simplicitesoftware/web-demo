@@ -1,11 +1,11 @@
 ![Simplicit&eacute; Software](https://www.simplicite.io/resources/logos/logo250.png)
-***
+* * *
 
 Web demo
 ========
 
-This project is a **very basic** web front-end demo using the
-[Simplicit&eacute;&reg; node.js & browser library](https://github.com/simplicitesoftware/nodejs-api).
+This project is a **very basic** web front-end demo using the [Simplicit&eacute;&reg; node.js &amp; browser library](https://github.com/simplicitesoftware/nodejs-api).
+to connect to a Simplicité® demo backend instance from the **client-side**.
 
 Prerequisites:
 
