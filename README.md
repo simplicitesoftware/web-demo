@@ -14,11 +14,11 @@ Prerequisites:
 
 Install:
 
-        npm install
+	npm install
 
 Build:
 
-        browserify index.js | uglifyjs -o bundle.js
+	npm run build
 
 License
 =======

@@ -9,5 +9,8 @@
   "repository": {
     "type": "git",
     "url": "git://github.com/simplicitesoftware/web-demo.git"
+  },
+  "scripts": {
+    "build": "browserify index.js | uglifyjs -o bundle.js"
   }
 }
