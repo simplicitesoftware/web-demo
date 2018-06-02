@@ -43,10 +43,9 @@ Then you can start an application session by:
 
 The usage is similar to the example of this repository.
 
-Vue
----
+### Vue
 
-**TODO**
+_To be competed_
 
 License
 =======
