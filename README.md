@@ -38,7 +38,7 @@ import Simplicite from 'simplicite';
 Then you can start an application session by:
 
 ```typescript
- let app = Simplicite.session({ /* Your application's parameters */});
+ let app = Simplicite.session({ /* Your application's parameters */ });
 ```
 
 The usage is similar to the example of this repository.
