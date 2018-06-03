@@ -2,8 +2,10 @@
 
 function elt(id, html) { var e = document.getElementById(id); if (html) e.innerHTML = html; return e; };
 
+var Simplicite = require('simplicite');
+
 var debug = false;
-var app = require('simplicite').session({
+var app = Simplicite.session({
         url: 'https://demo.dev.simplicite.io',
         username: 'website',
         password: 'simplicite',
