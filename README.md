@@ -26,10 +26,9 @@ Build:
 Frameworks tips &amp; tricks
 ----------------------------
 
-### Angular&reg;
-
-In [Angular&reg;](https://angular.io) you can include the Simplicit&eacute;&reg; node.js &amp; browser library like this
-(after adding the dependency `"simplicite": "latest"`in the `package.json`):
+In [Angular&reg;](https://angular.io) or in [Vue.js](https://vuejs.org/),
+after adding the dependency `"simplicite": "latest"`in the `package.json`,
+you can include the Simplicit&eacute;&reg; node.js &amp; browser library like this.
 
 ```typescript
 import Simplicite from 'simplicite';
@@ -38,14 +37,10 @@ import Simplicite from 'simplicite';
 Then you can start an application session by:
 
 ```typescript
- let app = Simplicite.session({ /* Your application's parameters */ });
+let app = Simplicite.session({ /* Your application's parameters */ });
 ```
 
 The usage is similar to the example of this repository.
-
-### Vue
-
-_To be competed_
 
 License
 =======
