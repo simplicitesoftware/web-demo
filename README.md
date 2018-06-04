@@ -4,8 +4,8 @@
 Web demo
 ========
 
-This project is a **very basic** web front-end demo using the [Simplicit&eacute;&reg; node.js &amp; browser JavaScript library](https://github.com/simplicitesoftware/nodejs-api)
-to connect to a Simplicité® demo backend instance from the **client-side**.
+This project is a **very basic** web front-end demo using
+the [Simplicit&eacute;&reg; node.js &amp; browser JavaScript library](https://github.com/simplicitesoftware/nodejs-api).
 
 Prerequisites:
 
