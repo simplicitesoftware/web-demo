@@ -9,6 +9,10 @@ table, tr, th, td  {
 th, td {
 	padding: 10px;
 }
+#logo {
+	width: 200px;
+	max-width: 100%;
+}
 .products .name {
 	font-weight: bold;
 }
