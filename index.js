@@ -31,6 +31,6 @@ app.login().then(function(params) {
 		l += '</tbody></table>';
 		elt('products', l);
 	});
-}, function(reason) {
+}).fail(function(reason) {
 	elt('user', 'ERROR: Login failed (status: ' + reason.status + ', message: ' + reason.message + ')');
 });
