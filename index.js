@@ -14,8 +14,7 @@ var app = Simplicite.session({
 }), prd;
 
 app.login().then(function(params) {
-	if (debug) console.log(params);
-	console.log('Logged in as ' + params.username);
+	if (debug) console.log('Logged in as ' + params.username);
 	return app.getGrant().then(function(grant) {
 		if (debug) console.log(grant);
 		elt('user', 'Hello ' + grant.getLogin() + '!');
