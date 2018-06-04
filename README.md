@@ -4,7 +4,7 @@
 Web demo
 ========
 
-This project is a **very basic** web front-end demo using the [Simplicit&eacute;&reg; node.js &amp; browser library](https://github.com/simplicitesoftware/nodejs-api)
+This project is a **very basic** web front-end demo using the [Simplicit&eacute;&reg; node.js &amp; browser JavaScript library](https://github.com/simplicitesoftware/nodejs-api)
 to connect to a Simplicité® demo backend instance from the **client-side**.
 
 Prerequisites:
@@ -15,9 +15,9 @@ Install:
 
 	npm install
 
-Run in watch mode:
+Run in dev mode:
 
-	npm run watch
+	npm run dev
 
 Build:
 

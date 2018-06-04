@@ -11,7 +11,7 @@
     "url": "git://github.com/simplicitesoftware/web-demo.git"
   },
   "scripts": {
-    "build": "browserify index.js | uglifyjs -cm -o bundle.js",
-    "watch": "watchify index.js --verbose -o bundle.js"
+    "dev": "watchify index.js --verbose -o bundle.js",
+    "build": "browserify index.js | uglifyjs -cm -o bundle.js"
   }
 }
