@@ -6,31 +6,31 @@ var Simplicite = require('simplicite');
 
 var debug = false;
 var app = Simplicite.session({
-        url: 'https://demo.dev.simplicite.io',
-        username: 'website',
-        password: 'simplicite',
-        debug: debug
+	url: 'https://demo.dev.simplicite.io',
+	username: 'website',
+	password: 'simplicite',
+	debug: debug
 });
 var prd;
 
 app.login().then(function(params) {
-        if (debug) console.log(params);
-        console.log('Logged in as ' + params.username);
-        return app.getGrant(); // next promise
+	if (debug) console.log(params);
+	console.log('Logged in as ' + params.username);
+	return app.getGrant(); // next promise
 }, function(reason) {
-        app = null;
+	app = null;
 	var msg = 'Login failed (status: ' + reason.status + ', message: ' + reason.message + ')';
-        console.error(msg);
-        elt('user', msg);
+	console.error(msg);
+	elt('user', msg);
 }).then(function(grant) {
-        if (!app) return;
-        if (debug) console.log(grant);
-        elt('user', 'Hello ' + grant.getLogin() + '!');
+	if (!app) return;
+	if (debug) console.log(grant);
+	elt('user', 'Hello ' + grant.getLogin() + '!');
 	prd = app.getBusinessObject('DemoProduct');
 	return prd.search(null, { inlineThumbs: true }); // next promise
 }).then(function(list) {
-        if (!app) return;
-        if (debug) console.log(list);
+	if (!app) return;
+	if (debug) console.log(list);
 	var l = '<table class="products"><tbody>';
 	for (var i = 0; i < list.length; i++) {
 		var item = list[i];
