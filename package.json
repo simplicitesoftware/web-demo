@@ -12,6 +12,7 @@
   },
   "scripts": {
     "dev": "watchify index.js --verbose -o bundle.js",
-    "build": "browserify index.js | uglifyjs -cm -o bundle.js"
+    "build": "browserify index.js | uglifyjs -cm -o bundle.js",
+    "serve": "serve -l 3000 ."
   }
 }

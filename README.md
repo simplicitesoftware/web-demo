@@ -11,7 +11,7 @@ to connect to a Simplicit&eacute;&reg; demo backend instance from the **client-s
 
 Prerequisites:
 
-	sudo npm install -g browserify uglify-js watchify
+	sudo npm install -g browserify uglify-js watchify serve
 
 Install:
 
@@ -21,9 +21,13 @@ Run in dev mode:
 
 	npm run dev
 
-Build:
+Build for prod:
 
 	npm run build
+
+Serve:
+
+	npm run serve
 
 Frameworks tips &amp; tricks
 ----------------------------
