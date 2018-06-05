@@ -29,11 +29,17 @@ app.login().then(function(params) {
 		return prd.search(null, { inlineThumbs: true });
 	}).then(function(list) {
 		if (debug) console.log(list);
-		var l = '<table class="products"><tbody>';
+		var l = '<table><tbody>';
 		for (var i = 0; i < list.length; i++) {
 			var item = list[i];
-			l += '<tr><td><img src="data:image/png;base64,' + item.demoPrdPicture.thumbnail + '"/></td>';
-			l += '<td><div class="name">' + item.demoPrdName + '</div><div class="reference">' + item.demoPrdReference + '</div></td></tr>';
+			l += '<tr>' +
+					'<td><img src="data:image/png;base64,' + item.demoPrdPicture.thumbnail + '"/></td>' +
+				 	'<td>' +
+						'<div class="name">' + item.demoPrdName + '</div>' +
+						'<div class="reference">' + item.demoPrdReference + '</div>' +
+						'<div class="description">' + item.demoPrdDescription+ '</div>' +
+					'</td>' +
+				'</tr>';
 		}
 		l += '</tbody></table>';
 		elt('products', l);

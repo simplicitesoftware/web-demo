@@ -19,7 +19,8 @@ Install:
 
 Run in dev mode:
 
-	npm run dev
+	npm run watch &
+	npm run serve
 
 Build for prod:
 
