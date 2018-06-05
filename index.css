@@ -18,8 +18,11 @@ th, td {
 }
 #products .reference {
 	font-style: italic;
-	color: #777;
+	color: #707070;
 }
 #products .description {
 	font-size: small;
+	background-color: #F0F0F0;
+	padding: 10px;
+	border-radius: 8px;
 }
