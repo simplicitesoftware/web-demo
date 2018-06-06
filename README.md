@@ -11,24 +11,34 @@ to connect to a Simplicit&eacute;&reg; demo backend instance from the **client-s
 
 Prerequisites:
 
-	sudo npm install -g browserify uglify-js watchify serve
+```bash
+sudo npm install -g browserify uglify-js watchify serve
+```
 
 Install:
 
-	npm install
+```bash
+npm install
+```
 
 Run in dev mode:
 
-	npm run watch &
-	npm run serve
+```bash
+npm run watch &
+npm run serve
+```
 
 Build for prod:
 
-	npm run build
+```bash
+npm run build
+```
 
 Serve:
 
-	npm run serve
+```bash
+npm run serve
+```
 
 Frameworks tips &amp; tricks
 ----------------------------
@@ -63,4 +73,3 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-
