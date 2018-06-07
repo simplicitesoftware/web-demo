@@ -10,6 +10,12 @@ table, tr, th, td  {
 th, td {
 	padding: 10px;
 }
+.error {
+	background: #FF0000;
+	color: #FFFFFF;
+	padding: 12px;
+	border-radius: 8px;
+}
 #logo {
 	width: 200px;
 	max-width: 100%;

@@ -24,7 +24,7 @@ app.login().then(function(params) {
 	if (debug) console.log('Logged in as ' + params.username);
 	return app.getGrant().then(function(grant) {
 		if (debug) console.log(grant);
-		elt('user', 'Hello ' + grant.getLogin() + '!');
+		elt('message', 'Hello ' + grant.getLogin() + '!');
 		prd = app.getBusinessObject('DemoProduct');
 		return prd.search(null, { inlineThumbs: true });
 	}).then(function(list) {
@@ -45,5 +45,5 @@ app.login().then(function(params) {
 		elt('products', l);
 	});
 }).fail(function(reason) {
-	elt('user', 'ERROR: Login failed (status: ' + reason.status + ', message: ' + reason.message + ')');
+	elt('message', '<div class="error">Error: Login failed (status: ' + reason.status + ', message: ' + reason.message + ')</div>');
 });
