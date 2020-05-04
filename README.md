@@ -21,7 +21,7 @@ Install:
 npm install
 ```
 
-Run in dev mode:
+Run in development mode:
 
 ```bash
 npm run watch &
@@ -34,7 +34,7 @@ Build for production:
 npm run build
 ```
 
-Serve:
+Run in production mode:
 
 ```bash
 npm run serve
