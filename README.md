@@ -28,7 +28,7 @@ npm run watch &
 npm run serve
 ```
 
-Build for prod:
+Build for production:
 
 ```bash
 npm run build
