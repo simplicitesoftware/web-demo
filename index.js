@@ -7,7 +7,11 @@
  */
 'use strict';
 
-function elt(id, html) { var e = document.getElementById(id); if (html) e.innerHTML = html; return e; };
+function elt(id, html) {
+	var e = document.getElementById(id);
+	if (html) e.innerHTML = html;
+	return e;
+}
 
 var Simplicite = require('simplicite');
 
