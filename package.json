@@ -11,9 +11,9 @@
     "url": "git://github.com/simplicitesoftware/web-demo.git"
   },
   "scripts": {
-    "start": "browserify index.js -o bundle.js && serve -l 3000",
+    "start": "lessc index.less index.css && browserify index.js -o bundle.js && serve -l 3000",
     "watch": "watchify index.js --verbose -o bundle.js",
-    "build": "browserify index.js | uglifyjs -cm -o bundle.js",
+    "build": "lessc --clean-css index.less index.css && browserify index.js | uglifyjs -cm -o bundle.js",
     "serve": "serve -l 3000"
   }
 }

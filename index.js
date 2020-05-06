@@ -8,46 +8,39 @@
 'use strict';
 
 function elt(id, html) {
-	var e = document.getElementById(id);
+	var e = document.getElementById('web-demo-' + id);
 	if (html) e.innerHTML = html;
 	return e;
 }
 
 var Simplicite = require('simplicite');
 
-var debug = false;
+var debug = true;
+var app = Simplicite.session({ url: 'https://demo.dev.simplicite.io', debug: debug }), prd;
 
-var app = Simplicite.session({
-	url: 'https://demo.dev.simplicite.io',
-	username: 'website',
-	password: 'simplicite',
-	debug: debug
-}), prd;
-
-app.login().then(function(params) {
+app.login({ username: 'website', password: 'simplicite' }).then(function(params) {
 	if (debug) console.log('Logged in as ' + params.username);
-	return app.getGrant().then(function(grant) {
-		if (debug) console.log(grant);
-		elt('message', 'Hello ' + grant.getLogin() + '!');
-		prd = app.getBusinessObject('DemoProduct');
-		return prd.search(null, { inlineThumbs: true });
-	}).then(function(list) {
-		if (debug) console.log(list);
-		var l = '<table><tbody>';
-		for (var i = 0; i < list.length; i++) {
-			var item = list[i];
-			l += '<tr>' +
-					'<td><img src="data:image/png;base64,' + item.demoPrdPicture.thumbnail + '"/></td>' +
-				 	'<td>' +
-						'<div class="name">' + item.demoPrdName + '</div>' +
-						'<div class="reference">' + item.demoPrdReference + '</div>' +
-						'<div class="description">' + item.demoPrdDescription+ '</div>' +
-					'</td>' +
-				'</tr>';
-		}
-		l += '</tbody></table>';
-		elt('products', l);
-	});
+	return app.getGrant();
+}).then(function(grant) {
+	if (debug) console.log(grant);
+	elt('message', 'Hello ' + grant.getLogin() + '!');
+	prd = app.getBusinessObject('DemoProduct');
+	return prd.search(null, { inlineDocuments: [ 'demoPrdPicture' ] });
+}).then(function(list) {
+	if (debug) console.log(list);
+	var l = '<ul>';
+	for (var i = 0; i < list.length; i++) {
+		var item = list[i];
+		l += '<li>' +
+				'<img alt="Picture" src="data:' + item.demoPrdPicture.mime + ';base64,' + item.demoPrdPicture.content + '"/>' +
+				'<h1>' + item.demoPrdName + '</h1>' +
+				'<h2>' + item.demoPrdReference + '</h2>' +
+				'<p>' + item.demoPrdDescription+ '</p>' +
+			'</li>';
+	}
+	l += '</ul>';
+	elt('products', l);
 }).catch(function(err) {
-	elt('message', '<div class="error">Error: Login failed (' + err.message + ')</div>');
+	if (debug) console.log(err);
+	elt('message', '<div class="error">Error: ' + err.message + ')</div>');
 });
