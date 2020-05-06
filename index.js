@@ -23,7 +23,7 @@ app.login({ username: 'website', password: 'simplicite' }).then(function(params)
 	return app.getGrant();
 }).then(function(grant) {
 	if (debug) console.log(grant);
-	elt('message', 'Hello ' + grant.getLogin() + '!');
+	elt('message', 'Hello ' + grant.getLogin());
 	prd = app.getBusinessObject('DemoProduct');
 	return prd.search(null, { inlineDocuments: [ 'demoPrdPicture' ] });
 }).then(function(list) {
