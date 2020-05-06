@@ -48,6 +48,6 @@ app.login().then(function(params) {
 		l += '</tbody></table>';
 		elt('products', l);
 	});
-}).fail(function(reason) {
-	elt('message', '<div class="error">Error: Login failed (status: ' + reason.status + ', message: ' + reason.message + ')</div>');
+}).catch(function(err) {
+	elt('message', '<div class="error">Error: Login failed (' + err.message + ')</div>');
 });
