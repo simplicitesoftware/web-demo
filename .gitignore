@@ -1,5 +1,9 @@
 node_modules
 index.css
 bundle.js
+.scannerwork
 **.bak
-**.log
+**.new
+**.tmp
+**/Thumbs.db
+**/.DS_Store
