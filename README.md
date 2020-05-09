@@ -11,12 +11,6 @@ the [Simplicit&eacute;&reg; node.js &amp; browser JavaScript library](https://gi
 to connect to a Simplicit&eacute;&reg; demo backend instance from the **client-side**.
 
 
-Prerequisites:
-
-```bash
-sudo npm install -g browserify less less-plugin-clean-css uglify-js watchify serve
-```
-
 Install:
 
 ```bash
