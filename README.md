@@ -21,7 +21,7 @@ Run in development mode:
 
 ```bash
 npm run watch &
-npm run serve
+npm run start
 ```
 
 Build for production:

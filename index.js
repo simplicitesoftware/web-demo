@@ -15,7 +15,7 @@ function elt(id, html) {
 
 var Simplicite = require('simplicite');
 
-var debug = true;
+var debug = false;
 var app = Simplicite.session({ url: 'https://demo.dev.simplicite.io', debug: debug }), prd;
 
 app.login({ username: 'website', password: 'simplicite' }).then(function(params) {
