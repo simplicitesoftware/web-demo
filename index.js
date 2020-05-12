@@ -18,16 +18,16 @@ var Simplicite = require('simplicite');
 var debug = false;
 var app = Simplicite.session({ url: 'https://demo.dev.simplicite.io', debug: debug }), prd;
 
-app.login({ username: 'website', password: 'simplicite' }).then(function(params) {
-	if (debug) console.log('Logged in as ' + params.username);
+app.login({ username: 'website', password: 'simplicite' }).then(function(res) {
+	app.debug('Logged in as ' + res.username);
 	return app.getGrant();
 }).then(function(grant) {
-	if (debug) console.log(grant);
+	app.debug(grant);
 	elt('message', 'Hello ' + grant.getLogin());
 	prd = app.getBusinessObject('DemoProduct');
 	return prd.search(null, { inlineDocuments: [ 'demoPrdPicture' ] });
 }).then(function(list) {
-	if (debug) console.log(list);
+	app.debug(list);
 	var l = '<ul>';
 	for (var i = 0; i < list.length; i++) {
 		var item = list[i];
@@ -41,6 +41,6 @@ app.login({ username: 'website', password: 'simplicite' }).then(function(params)
 	l += '</ul>';
 	elt('products', l);
 }).catch(function(err) {
-	if (debug) console.log(err);
+	app.log(err);
 	elt('message', '<div class="error">Error: ' + err.message + ')</div>');
 });
