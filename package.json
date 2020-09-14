@@ -1,18 +1,18 @@
 {
   "name": "web-demo",
   "description": "Web demo",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "license": "Apache-2.0",
   "dependencies": {
     "simplicite": "latest"
   },
   "devDependencies": {
     "browserify": "latest",
-    "watchify": "latest",
-    "uglify-js": "latest",
     "less": "latest",
     "less-plugin-clean-css": "latest",
-    "serve": "latest"
+    "serve": "latest",
+    "uglify-js": "latest",
+    "watchify": "latest"
   },
   "repository": {
     "type": "git",
