@@ -20,8 +20,7 @@ npm install
 Run in development mode:
 
 ```bash
-npm run watch &
-npm run start
+npm run watch & npm run start
 ```
 
 Build for production:

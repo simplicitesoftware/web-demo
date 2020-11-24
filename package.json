@@ -1,7 +1,7 @@
 {
   "name": "web-demo",
   "description": "Web demo",
-  "version": "1.1.16",
+  "version": "1.1.18",
   "license": "Apache-2.0",
   "dependencies": {
     "simplicite": "latest"
