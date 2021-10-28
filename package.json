@@ -7,12 +7,13 @@
     "simplicite": "^2.0.1"
   },
   "devDependencies": {
-    "browserify": "latest",
-    "less": "latest",
-    "less-plugin-clean-css": "latest",
-    "serve": "latest",
-    "uglify-js": "latest",
-    "watchify": "latest"
+    "browserify": "^17.0.0",
+    "less": "^4.1.2",
+    "less-plugin-clean-css": "^1.5.1",
+    "npm-check-updates": "^11.8.5",
+    "serve": "^12.0.1",
+    "uglify-js": "^3.14.2",
+    "watchify": "^4.0.0"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,7 @@
     "start": "lessc index.less index.css && browserify index.js -o bundle.js && serve -l 3000",
     "watch": "watchify index.js --verbose -o bundle.js",
     "build": "lessc --clean-css index.less index.css && browserify index.js | uglifyjs -cm -o bundle.js",
-    "serve": "serve -l 3000"
+    "serve": "serve -l 3000",
+    "ncu": "ncu"
   }
 }
