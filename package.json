@@ -1,10 +1,10 @@
 {
   "name": "web-demo",
   "description": "Web demo",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "license": "Apache-2.0",
   "dependencies": {
-    "simplicite": "^2.0.1"
+    "simplicite": "^2.1.0"
   },
   "devDependencies": {
     "browserify": "^17.0.0",
