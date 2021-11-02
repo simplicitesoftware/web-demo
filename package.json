@@ -1,13 +1,14 @@
 {
   "name": "web-demo",
   "description": "Web demo",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "license": "Apache-2.0",
   "dependencies": {
-    "simplicite": "^2.1.0"
+    "simplicite": "^2.2.0"
   },
   "devDependencies": {
     "browserify": "^17.0.0",
+    "esmify": "^2.1.1",
     "less": "^4.1.2",
     "less-plugin-clean-css": "^1.5.1",
     "npm-check-updates": "^11.8.5",
@@ -22,7 +23,7 @@
   "scripts": {
     "start": "lessc index.less index.css && browserify index.js -o bundle.js && serve -l 3000",
     "watch": "watchify index.js --verbose -o bundle.js",
-    "build": "lessc --clean-css index.less index.css && browserify index.js | uglifyjs -cm -o bundle.js",
+    "build": "lessc --clean-css index.less index.css && browserify -p esmify index.js | uglifyjs -cm -o bundle.js",
     "serve": "serve -l 3000",
     "ncu": "ncu"
   }

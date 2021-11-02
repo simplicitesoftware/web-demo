@@ -7,16 +7,17 @@
  */
 'use strict';
 
-function elt(id, html) {
-	var e = document.getElementById('web-demo-' + id);
-	if (html) e.innerHTML = html;
-	return e;
+//import simplicite from 'simplicite';
+import simplicite from '../nodejs-api/src/simplicite.js';
+
+const debug = false;
+const app = simplicite.session({ url: 'https://demo.dev.simplicite.io', debug: debug });
+let prd;
+
+function write(id, html) {
+	const e = document.getElementById('web-demo-' + id);
+	if (e && html) e.innerHTML = html;
 }
-
-var Simplicite = require('simplicite');
-
-var debug = true;
-var app = Simplicite.session({ url: 'https://demo.dev.simplicite.io', debug: debug }), prd;
 
 app.login({ username: 'website', password: 'simplicite' }).then(function(res) {
 	app.debug('Logged in as ' + res.username);
@@ -24,7 +25,7 @@ app.login({ username: 'website', password: 'simplicite' }).then(function(res) {
 	return app.getGrant();
 }).then(function(grant) {
 	app.debug(grant);
-	elt('message', 'Hello ' + grant.getLogin());
+	write('message', 'Hello ' + grant.getLogin());
 	// Create object
 	prd = app.getBusinessObject('DemoProduct');
 	// Get product object's metadata
@@ -36,9 +37,9 @@ app.login({ username: 'website', password: 'simplicite' }).then(function(res) {
 }).then(function(list) {
 	app.debug(list);
 	// Display product
-	var l = '<ul>';
-	for (var i = 0; i < list.length; i++) {
-		var item = list[i];
+	let l = '<ul>';
+	for (let i = 0; i < list.length; i++) {
+		const item = list[i];
 		l += '<li>' +
 				'<img alt="Picture" src="data:' + item.demoPrdPicture.mime + ';base64,' + item.demoPrdPicture.content + '"/>' +
 				'<h1>' + item.demoPrdName + '</h1>' +
@@ -47,8 +48,8 @@ app.login({ username: 'website', password: 'simplicite' }).then(function(res) {
 			'</li>';
 	}
 	l += '</ul>';
-	elt('products', l);
+	write('products', l);
 }).catch(function(err) {
 	app.log(err);
-	elt('message', '<div class="error">Error: ' + err.message + ')</div>');
+	write('message', '<div class="error">Error: ' + err.message + ')</div>');
 });
