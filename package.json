@@ -1,29 +1,26 @@
 {
   "name": "web-demo",
   "description": "Web demo",
-  "version": "2.2.7",
+  "version": "2.2.8",
   "license": "Apache-2.0",
   "dependencies": {
-    "simplicite": "^2.2.7"
+    "simplicite": "^2.2.8"
   },
   "devDependencies": {
-    "browserify": "^17.0.0",
-    "esmify": "^2.1.1",
+    "eslint": "^8.1.0",
     "less": "^4.1.2",
     "less-plugin-clean-css": "^1.5.1",
     "npm-check-updates": "^12.0.0",
     "serve": "^13.0.2",
-    "uglify-js": "^3.14.3",
-    "watchify": "^4.0.0"
+    "webpack": "^5.62.1",
+    "webpack-cli": "^4.9.1"
   },
   "repository": {
     "type": "git",
     "url": "git://github.com/simplicitesoftware/web-demo.git"
   },
   "scripts": {
-    "start": "lessc index.less index.css && browserify index.js -o bundle.js && serve -l 3000",
-    "watch": "watchify index.js --verbose -o bundle.js",
-    "build": "lessc --clean-css index.less index.css && browserify -p esmify index.js | uglifyjs -cm -o bundle.js",
+    "build": "webpack build --config=./webpack.config.js ./main.js && lessc --clean-css ./styles.less dist/styles.css",
     "serve": "serve -l 3000",
     "ncu": "ncu"
   }

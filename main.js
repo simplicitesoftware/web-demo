@@ -8,13 +8,12 @@
 'use strict';
 
 import simplicite from 'simplicite';
-// Import as ES module
-//import simplicite from './node_modules/simplicite/build/esm/simplicite.js';
-// Import as CommonJS module
-//const simplicite = require('./node_modules/simplicite/build/cjs/simplicite.js').default; // ZZZ don't forget .default
 
-const debug = false;
-const app = simplicite.session({ url: 'https://demo.dev.simplicite.io', debug: debug });
+const app = simplicite.session({ url: 'https://demo.dev.simplicite.io', debug: false });
+
+app.info('Version: ' + simplicite.constants.MODULE_VERSION);
+app.debug(app.parameters);
+
 let prd;
 
 function elt(id, html) {

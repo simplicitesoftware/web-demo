@@ -4,12 +4,9 @@
 Web demo
 ========
 
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=simplicitesoftware_web-demo&metric=alert_status)](https://sonarcloud.io/dashboard?id=simplicitesoftware_web-demo)
-
 This project is a **very basic** web front-end demo using
 the [Simplicit&eacute;&reg; node.js &amp; browser JavaScript library](https://github.com/simplicitesoftware/nodejs-api)
 to connect to a Simplicit&eacute;&reg; demo backend instance from the **client-side**.
-
 
 Install:
 
@@ -17,42 +14,17 @@ Install:
 npm install
 ```
 
-Run in development mode:
-
-```bash
-npm run watch & npm run start
-```
-
-Build for production:
+Build:
 
 ```bash
 npm run build
 ```
 
-Run in production mode:
+Run:
 
 ```bash
 npm run serve
 ```
-
-Frameworks tips &amp; tricks
-----------------------------
-
-In [Angular&reg;](https://angular.io) or in [Vue.js](https://vuejs.org/),
-after adding the dependency `"simplicite": "latest"`in the `package.json`,
-you can include the Simplicit&eacute;&reg; node.js &amp; browser library like this.
-
-```typescript
-import Simplicite from 'simplicite';
-```
-
-Then you can start an application session by:
-
-```typescript
-let app = Simplicite.session({ /* Your application's parameters */ });
-```
-
-The usage is similar to the example of this repository.
 
 License
 =======
