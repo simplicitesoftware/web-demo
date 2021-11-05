@@ -7,16 +7,20 @@
  */
 'use strict';
 
-//import simplicite from 'simplicite';
-import simplicite from '../nodejs-api/src/simplicite.js';
+import simplicite from 'simplicite';
+// Import as ES module
+//import simplicite from './node_modules/simplicite/build/esm/simplicite.js';
+// Import as CommonJS module
+//const simplicite = require('./node_modules/simplicite/build/cjs/simplicite.js').default; // ZZZ don't forget .default
 
 const debug = false;
 const app = simplicite.session({ url: 'https://demo.dev.simplicite.io', debug: debug });
 let prd;
 
-function write(id, html) {
-	const e = document.getElementById('web-demo-' + id);
-	if (e && html) e.innerHTML = html;
+function elt(id, html) {
+	const el = document.getElementById('web-demo-' + id);
+	if (el && html) el.innerHTML = html;
+	return el;
 }
 
 app.login({ username: 'website', password: 'simplicite' }).then(function(res) {
@@ -25,18 +29,41 @@ app.login({ username: 'website', password: 'simplicite' }).then(function(res) {
 	return app.getGrant();
 }).then(function(grant) {
 	app.debug(grant);
-	write('message', 'Hello ' + grant.getLogin());
-	// Create object
+	elt('message', 'Hello ' + grant.getLogin());
+	// Get object
 	prd = app.getBusinessObject('DemoProduct');
 	// Get product object's metadata
 	return prd.getMetaData(); 
 }).then(function(metadata) {
 	app.debug(metadata);
+	elt('product-add').onclick = function() {
+		// Create new product
+		prd.getForCreate().then(function() {
+			console.log(prd.item);
+			prd.item.demoPrdSupId = 1;
+			prd.item.demoPrdType = 'OTHER';
+			prd.item.demoPrdReference = elt('product-ref').value;
+			prd.item.demoPrdName = elt('product-name').value;
+			var file = elt('product-picture').files[0];
+			console.log(file);
+			var fr = new FileReader();
+			fr.onload = function() {
+				if (fr.result) {
+					prd.item.demoPrdPicture = { id: 0, name: file.name, type: file.type, content: fr.result };
+					console.log(prd.item);
+					prd.save().then(function() {
+						console.log(prd.item);
+					});
+				}
+			};
+			fr.readAsDataURL(file);
+		});
+	};
 	// Search available products (with picture)
 	return prd.search({ demoPrdAvailable: true }, { inlineDocuments: [ 'demoPrdPicture' ] });
 }).then(function(list) {
 	app.debug(list);
-	// Display product
+	// Display all products
 	let l = '<ul>';
 	for (let i = 0; i < list.length; i++) {
 		const item = list[i];
@@ -48,8 +75,8 @@ app.login({ username: 'website', password: 'simplicite' }).then(function(res) {
 			'</li>';
 	}
 	l += '</ul>';
-	write('products', l);
+	elt('products', l);
 }).catch(function(err) {
 	app.log(err);
-	write('message', '<div class="error">Error: ' + err.message + ')</div>');
+	elt('message', '<div class="error">Error: ' + err.message + ')</div>');
 });
