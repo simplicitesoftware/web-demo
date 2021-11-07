@@ -6,5 +6,17 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'public'),
     filename: 'main-bundle.js'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.less$/i,
+        use: [
+          { loader: 'style-loader' },
+          { loader: 'css-loader' },
+          { loader: 'less-loader' }
+        ]
+      }
+    ]
   }
 };

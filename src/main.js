@@ -7,6 +7,7 @@
  */
 'use strict';
 
+import styles from './styles.less';
 import simplicite from 'simplicite';
 
 const app = simplicite.session({ url: 'https://demo.dev.simplicite.io', debug: false });

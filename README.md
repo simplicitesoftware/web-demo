@@ -8,19 +8,29 @@ This project is a **very basic** web front-end demo using
 the [Simplicit&eacute;&reg; node.js &amp; browser JavaScript library](https://github.com/simplicitesoftware/nodejs-api)
 to connect to a Simplicit&eacute;&reg; demo backend instance from the **client-side**.
 
-Install:
+Install
+-------
 
 ```bash
 npm install
 ```
 
-Build:
+Run in developement mode
+------------------------
+
+```bash
+npm run start
+```
+
+Build for production
+--------------------
 
 ```bash
 npm run build
 ```
 
-Run:
+Run in production mode
+----------------------
 
 ```bash
 npm run serve
