@@ -1,10 +1,10 @@
 {
   "name": "web-demo",
   "description": "Web demo",
-  "version": "2.2.9",
+  "version": "2.2.10",
   "license": "Apache-2.0",
   "dependencies": {
-    "simplicite": "^2.2.9"
+    "simplicite": "^2.2.10"
   },
   "devDependencies": {
     "acorn": "^8.5.0",
