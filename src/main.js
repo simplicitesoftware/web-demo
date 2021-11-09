@@ -23,8 +23,8 @@ function elt(id, html) {
 	return el;
 }
 
-app.login({ username: 'website', password: 'simplicite' }).then(function(res) {
-	app.debug('Logged in as ' + res.username);
+app.login({ username: 'website', password: 'simplicite' }).then(function(user) {
+	app.debug('Logged in as ' + user.login);
 	// Get user's details
 	return app.getGrant();
 }).then(function(grant) {
