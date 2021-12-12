@@ -65,15 +65,13 @@ app.login({ username: 'website', password: 'simplicite' }).then(function(user) {
 	app.debug(list);
 	// Display all products
 	let l = '<ul>';
-	for (let i = 0; i < list.length; i++) {
-		const item = list[i];
+	for (const item of list)
 		l += '<li>' +
 				'<img alt="Picture" src="data:' + item.demoPrdPicture.mime + ';base64,' + item.demoPrdPicture.content + '"/>' +
 				'<h1>' + item.demoPrdName + '</h1>' +
 				'<h2>' + item.demoPrdReference + ' (' + prd.getFieldListValue('demoPrdType', item) + ')</h2>' +
 				'<p>' + item.demoPrdDescription + '</p>' +
 			'</li>';
-	}
 	l += '</ul>';
 	elt('products', l);
 }).catch(function(err) {
