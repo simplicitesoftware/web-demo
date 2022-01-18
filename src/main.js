@@ -76,5 +76,5 @@ app.login({ username: 'website', password: 'simplicite' }).then(function(user) {
 	elt('products', l);
 }).catch(function(err) {
 	app.log(err);
-	elt('message', '<div class="error">Error: ' + err.message + ')</div>');
+	elt('message', '<div class="error">Error: ' + err.message + '</div>');
 });
