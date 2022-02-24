@@ -25,13 +25,15 @@
     "less": "^4.1.2",
     "style-loader": "^3.3.1",
     "css-loader": "^6.6.0",
-    "less-loader": "^10.2.0"
+    "less-loader": "^10.2.0",
+    "jszip-cli": "^1.4.24"
   },
   "scripts": {
     "lint": "eslint src/**.js && stylelint src/**.less",
     "start": "webpack serve --config=webpack.config.development.js",
     "build": "webpack --config=webpack.config.production.js",
     "serve": "serve -p 3000 public",
+    "zip": "jszip -c jszip.config.json",
     "ncu": "ncu"
   }
 }
