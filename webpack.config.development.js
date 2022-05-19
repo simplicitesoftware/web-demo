@@ -5,7 +5,8 @@ module.exports = {
 	entry: './src/main.js',
 	output: {
 		path: path.resolve(__dirname, 'public'),
-		filename: 'main-bundle.js'
+		filename: 'main-bundle.js',
+		publicPath: 'auto'
 	},
 	devServer: {
 		port: 3000

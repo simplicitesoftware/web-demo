@@ -1,8 +1,0 @@
-{
-    "entities": [
-        { "name": "./public", "root": true }
-    ],
-    "options": {
-        "output": "site.zip"
-    }
-}
