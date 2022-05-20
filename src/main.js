@@ -10,6 +10,7 @@
 import styles from './styles.less';
 import simplicite from 'simplicite';
 
+// Explicit URL needed for a standalone deployment, remove it when deploying in Simplicité
 const app = simplicite.session({ url: 'https://demo.dev.simplicite.io', debug: false });
 
 app.info('Version: ' + simplicite.constants.MODULE_VERSION);
@@ -33,7 +34,7 @@ app.login({ username: 'website', password: 'simplicite' }).then(function(user) {
 	// Get object
 	prd = app.getBusinessObject('DemoProduct');
 	// Get product object's metadata
-	return prd.getMetaData(); 
+	return prd.getMetaData();
 }).then(function(metadata) {
 	app.debug(metadata);
 	elt('product-add').onclick = function() {
