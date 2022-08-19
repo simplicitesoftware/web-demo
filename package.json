@@ -17,6 +17,7 @@
     "stylelint": "^14.10.0",
     "stylelint-config-standard": "^27.0.0",
     "postcss-less": "^6.0.0",
+    "npm-check": "^6.0.1",
     "npm-check-updates": "^16.0.5",
     "serve": "^14.0.1",
     "webpack": "^5.74.0",
@@ -34,6 +35,7 @@
     "build": "webpack --config=webpack.config.production.js",
     "serve": "serve -p 3000 public",
     "zip": "rm -f site.zip && cd public && jszip-cli add --ignore *.LICENSE.txt --output ../site.zip .",
+    "check": "npm-check --skip-unused",
     "ncu": "ncu"
   }
 }
