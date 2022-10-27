@@ -68,7 +68,7 @@ app.login({ username: 'website', password: 'simplicite' }).then(function(user) {
 	let l = '<ul>';
 	for (const item of list)
 		l += '<li>' +
-				'<img alt="Picture" src="data:' + item.demoPrdPicture.mime + ';base64,' + item.demoPrdPicture.content + '"/>' +
+				(item.demoPrdPicture ? '<img alt="Picture" src="data:' + item.demoPrdPicture.mime + ';base64,' + item.demoPrdPicture.content + '"/>' : '') +
 				'<h1>' + item.demoPrdName + '</h1>' +
 				'<h2>' + item.demoPrdReference + ' (' + prd.getFieldListValue('demoPrdType', item) + ')</h2>' +
 				'<p>' + item.demoPrdDescription + '</p>' +
