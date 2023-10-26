@@ -1,7 +1,7 @@
 {
   "name": "web-demo",
   "description": "Web demo",
-  "version": "2.2.34",
+  "version": "2.2.36",
   "author": "Simplicite Software <contact@simplicitesoftware.com> (http://www.simplicitesoftware.com/)",
   "license": "Apache-2.0",
   "repository": {
@@ -9,17 +9,17 @@
     "url": "https://github.com/simplicitesoftware/web-demo.git"
   },
   "dependencies": {
-    "simplicite": "^2.2.34"
+    "simplicite": "^2.2.36"
   },
   "devDependencies": {
-    "acorn": "^8.10.0",
-    "eslint": "^8.50.0",
-    "stylelint": "^15.10.3",
+    "acorn": "^8.11.1",
+    "eslint": "^8.52.0",
+    "stylelint": "^15.11.0",
     "stylelint-config-standard": "^34.0.0",
     "postcss-less": "^6.0.0",
-    "npm-check-updates": "^16.14.4",
+    "npm-check-updates": "^16.14.6",
     "serve": "^14.2.1",
-    "webpack": "^5.88.2",
+    "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1",
     "less": "^4.2.0",

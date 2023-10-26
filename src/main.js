@@ -24,6 +24,16 @@ function elt(id, html) {
 	return el;
 }
 
+function save() {
+	prd.save().then(function() {
+		app.debug(prd.item);
+		alert('INFO: ' + prd.item.demoPrdReference + ' created');
+	}).catch(function(err) {
+		app.error(err);
+		alert('ERROR: ' + err.message);
+	});
+}
+
 app.login({ username: 'website', password: 'simplicite' }).then(function(user) {
 	app.debug('Logged in as ' + user.login);
 	// Get user's details
@@ -40,24 +50,23 @@ app.login({ username: 'website', password: 'simplicite' }).then(function(user) {
 	elt('product-add').onclick = function() {
 		// Create new product
 		prd.getForCreate().then(function() {
-			console.log(prd.item);
+			app.debug(prd.item);
 			prd.item.demoPrdSupId = 1;
 			prd.item.demoPrdType = 'OTHER';
 			prd.item.demoPrdReference = elt('product-ref').value;
 			prd.item.demoPrdName = elt('product-name').value;
 			var file = elt('product-picture').files[0];
-			console.log(file);
-			var fr = new FileReader();
-			fr.onload = function() {
-				if (fr.result) {
-					prd.item.demoPrdPicture = { id: 0, name: file.name, type: file.type, content: fr.result };
-					console.log(prd.item);
-					prd.save().then(function() {
-						console.log(prd.item);
-					});
-				}
-			};
-			fr.readAsDataURL(file);
+			if (file) {
+				var fr = new FileReader();
+				fr.onload = function() {
+					if (fr.result)
+						prd.item.demoPrdPicture = new simplicite.Doc(file.name).setContent(fr.result).getValue();
+					save();
+				};
+				fr.readAsDataURL(file);
+			} else {
+				save();
+			}
 		});
 	};
 	// Search available products (with picture)
