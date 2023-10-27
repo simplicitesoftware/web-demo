@@ -24,67 +24,60 @@ function elt(id, html) {
 	return el;
 }
 
-function save() {
-	prd.save().then(function() {
-		app.debug(prd.item);
-		alert('INFO: ' + prd.item.demoPrdReference + ' created');
-	}).catch(function(err) {
-		app.error(err);
-		alert('ERROR: ' + err.message);
+function error(err) {
+	app.error(err);
+	elt('message', '<div class="error">Error: ' + err.message + '</div>');
+}
+
+function display() {
+	prd.search({ demoPrdAvailable: true }, { inlineDocuments: [ 'demoPrdPicture' ] }).then(() => {
+		let l = '<ul>';
+		for (const item of prd.list)
+			l += '<li>' +
+					(item.demoPrdPicture ? '<img alt="Picture" src="data:' + item.demoPrdPicture.mime + ';base64,' + item.demoPrdPicture.content + '"/>' : '') +
+					'<h1>' + item.demoPrdName + '</h1>' +
+					'<h2>' + item.demoPrdReference + ' (' + prd.getFieldListValue('demoPrdType', item) + ')</h2>' +
+					'<p>' + item.demoPrdDescription + '</p>' +
+				'</li>';
+		l += '</ul>';
+		elt('products', l);
 	});
 }
 
-app.login({ username: 'website', password: 'simplicite' }).then(function(user) {
+function save() {
+	prd.save().then(display).catch(error);
+}
+
+app.login({ username: 'website', password: 'simplicite' }).then(user => {
 	app.debug('Logged in as ' + user.login);
 	// Get user's details
 	return app.getGrant();
-}).then(function(grant) {
+}).then(grant => {
 	app.debug(grant);
 	elt('message', 'Hello ' + grant.getLogin());
 	// Get object
 	prd = app.getBusinessObject('DemoProduct');
 	// Get product object's metadata
 	return prd.getMetaData();
-}).then(function(metadata) {
+}).then(metadata => {
 	app.debug(metadata);
 	elt('product-add').onclick = function() {
 		// Create new product
-		prd.getForCreate().then(function() {
-			app.debug(prd.item);
+		prd.getForCreate().then(item => {
+			app.debug(item);
 			prd.item.demoPrdSupId = 1;
 			prd.item.demoPrdType = 'OTHER';
 			prd.item.demoPrdReference = elt('product-ref').value;
 			prd.item.demoPrdName = elt('product-name').value;
 			var file = elt('product-picture').files[0];
-			if (file) {
-				var fr = new FileReader();
-				fr.onload = function() {
-					if (fr.result)
-						prd.item.demoPrdPicture = new simplicite.Doc(file.name).setContent(fr.result).getValue();
+			if (file)
+				new simplicite.Doc().load(file).then(doc => {
+					prd.item.demoPrdPicture = doc;
 					save();
-				};
-				fr.readAsDataURL(file);
-			} else {
+				});
+			else
 				save();
-			}
 		});
 	};
-	// Search available products (with picture)
-	return prd.search({ demoPrdAvailable: true }, { inlineDocuments: [ 'demoPrdPicture' ] });
-}).then(function(list) {
-	app.debug(list);
-	// Display all products
-	let l = '<ul>';
-	for (const item of list)
-		l += '<li>' +
-				(item.demoPrdPicture ? '<img alt="Picture" src="data:' + item.demoPrdPicture.mime + ';base64,' + item.demoPrdPicture.content + '"/>' : '') +
-				'<h1>' + item.demoPrdName + '</h1>' +
-				'<h2>' + item.demoPrdReference + ' (' + prd.getFieldListValue('demoPrdType', item) + ')</h2>' +
-				'<p>' + item.demoPrdDescription + '</p>' +
-			'</li>';
-	l += '</ul>';
-	elt('products', l);
-}).catch(function(err) {
-	app.log(err);
-	elt('message', '<div class="error">Error: ' + err.message + '</div>');
-});
+	display();
+}).catch(error);
