@@ -61,7 +61,7 @@ app.login({ username: 'website', password: 'simplicite' }).then(user => {
 	return prd.getMetaData();
 }).then(metadata => {
 	app.debug(metadata);
-	elt('product-add').onclick = function() {
+	elt('product-add').onclick = () => {
 		// Create new product
 		prd.getForCreate().then(item => {
 			app.debug(item);
