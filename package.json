@@ -12,21 +12,21 @@
     "simplicite": "^3.0.1"
   },
   "devDependencies": {
-    "acorn": "^8.11.3",
+    "acorn": "^8.12.1",
     "eslint": "^8.57.0",
-    "stylelint": "^16.6.0",
-    "stylelint-config-standard": "^36.0.0",
+    "stylelint": "^16.7.0",
+    "stylelint-config-standard": "^36.0.1",
     "postcss-less": "^6.0.0",
     "npm-check-updates": "^16.14.20",
     "serve": "^14.2.3",
-    "webpack": "^5.91.0",
+    "webpack": "^5.93.0",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.0.4",
     "less": "^4.2.0",
     "style-loader": "^4.0.0",
     "css-loader": "^7.1.2",
     "less-loader": "^12.2.0",
-    "@ffflorian/jszip-cli": "^3.6.3"
+    "@ffflorian/jszip-cli": "^3.6.4"
   },
   "engines": {
     "node": ">=18"

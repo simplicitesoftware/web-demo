@@ -11,7 +11,7 @@ import styles from './styles.less';
 import simplicite from 'simplicite';
 
 // Explicit URL needed for a standalone deployment, remove it when deploying in Simplicité
-const app = simplicite.session({ url: 'https://demo.dev.simplicite.io', debug: false });
+const app = simplicite.session({ url: 'https://demo.dev2.simplicite.io', debug: false });
 
 app.info('Version: ' + simplicite.constants.MODULE_VERSION);
 app.debug(app.parameters);
