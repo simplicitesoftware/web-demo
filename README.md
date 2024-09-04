@@ -5,7 +5,7 @@ Web demo
 ========
 
 This project is a **very basic** web front-end demo using
-the [Simplicit&eacute;&reg; node.js &amp; browser JavaScript library](https://github.com/simplicitesoftware/nodejs-api)
+the [Simplicit&eacute;&reg; node.js&reg; &amp; brower JavaScript API](https://www.npmjs.com/package/simplicite)
 to connect to a Simplicit&eacute;&reg; demo backend instance from the **client-side**.
 
 Install
@@ -46,7 +46,7 @@ npm run serve
 License
 =======
 
-Copyright 2018-2021 Simplicit&eacute; Software
+Copyright 2018-2024 Simplicit&eacute; Software
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
