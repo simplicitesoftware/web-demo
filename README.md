@@ -4,9 +4,7 @@
 Web demo
 ========
 
-This project is a **very basic** web front-end demo using
-the [Simplicit&eacute;&reg; node.js&reg; &amp; brower JavaScript API](https://www.npmjs.com/package/simplicite)
-to connect to a Simplicit&eacute;&reg; demo backend instance from the **client-side**.
+This project is a **very basic** web front-end demo.
 
 Install
 -------
@@ -22,8 +20,8 @@ Check syntax and rules
 npm run lint
 ```
 
-Run in developement mode
-------------------------
+Run in development mode
+-----------------------
 
 ```bash
 npm run start
