@@ -32,7 +32,9 @@
     "node": ">=18"
   },
   "scripts": {
-    "lint": "eslint src/**.js && stylelint src/**.less",
+    "eslint": "eslint src/**/*.js",
+    "stylelint": "stylelint src/**/*.less",
+    "lint": "npm run eslint && npm run stylelint",
     "start": "webpack serve --config=webpack.config.development.js",
     "build": "webpack --config=webpack.config.production.js",
     "serve": "serve -p 3000 public",
