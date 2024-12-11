@@ -32,13 +32,13 @@
     "node": ">=18"
   },
   "scripts": {
+    "ncu": "ncu",
     "eslint": "eslint src/**/*.js",
     "stylelint": "stylelint src/**/*.less",
     "lint": "npm run eslint && npm run stylelint",
     "start": "webpack serve --config=webpack.config.development.js",
-    "build": "webpack --config=webpack.config.production.js",
+    "build": "npm run lint && webpack --config=webpack.config.production.js",
     "serve": "serve -p 3000 public",
-    "zip": "rm -f SITE.zip && cd public && jszip-cli add --ignore *.LICENSE.txt --output ../SITE.zip .",
-    "ncu": "ncu"
+    "zip": "rm -f SITE.zip && cd public && jszip-cli add --ignore *.LICENSE.txt --output ../SITE.zip ."
   }
 }
