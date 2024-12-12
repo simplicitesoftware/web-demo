@@ -21,7 +21,7 @@
     "serve": "^14.2.4",
     "webpack": "^5.97.1",
     "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^5.1.0",
+    "webpack-dev-server": "^5.2.0",
     "less": "^4.2.1",
     "style-loader": "^4.0.0",
     "css-loader": "^7.1.2",
@@ -33,7 +33,7 @@
   },
   "scripts": {
     "ncu": "ncu",
-    "eslint": "eslint src/**/*.js",
+    "eslint": "eslint *.js *.mjs src/**/*.js",
     "stylelint": "stylelint src/**/*.less",
     "lint": "npm run eslint && npm run stylelint",
     "start": "webpack serve --config=webpack.config.development.js",
