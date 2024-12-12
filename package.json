@@ -33,11 +33,11 @@
   },
   "scripts": {
     "ncu": "ncu",
-    "eslint": "eslint *.js *.mjs src/**/*.js",
+    "eslint": "eslint *.cjs *.mjs src/**/*.js",
     "stylelint": "stylelint src/**/*.less",
     "lint": "npm run eslint && npm run stylelint",
-    "start": "webpack serve --config=webpack.config.development.js",
-    "build": "npm run lint && webpack --config=webpack.config.production.js",
+    "start": "webpack serve --config=webpack.config.development.cjs",
+    "build": "npm run lint && webpack --config=webpack.config.production.cjs",
     "serve": "serve -p 3000 public",
     "zip": "rm -f SITE.zip && cd public && jszip-cli add --ignore *.LICENSE.txt --output ../SITE.zip ."
   }
