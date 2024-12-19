@@ -7,26 +7,26 @@
  */
 'use strict';
 
-import styles from './styles.less';
+import styles from './styles.less'; // eslint-disable-line no-unused-vars
 import simplicite from 'simplicite';
 
 // Explicit URL needed for a standalone deployment, remove it when deploying in Simplicité
 const app = simplicite.session({ url: 'https://demo.dev2.simplicite.io', debug: false });
 
-app.info('Version: ' + simplicite.constants.MODULE_VERSION);
+app.info(`Version: ${simplicite.constants.MODULE_VERSION}`);
 app.debug(app.parameters);
 
 let prd;
 
 function elt(id, html) {
-  const el = document.getElementById('web-demo-' + id);
+  const el = document.getElementById(`web-demo-${id}`);
   if (el && html) el.innerHTML = html;
   return el;
 }
 
 function error(err) {
   app.error(err);
-  elt('message', '<div class="error">Error: ' + err.message + '</div>');
+  elt('message', `<div class="error">Error: ${err.message}</div>`);
 }
 
 function display() {
@@ -34,10 +34,10 @@ function display() {
     let l = '<ul>';
     for (const item of prd.list)
       l += '<li>' +
-          (item.demoPrdPicture ? '<img alt="Picture" src="data:' + item.demoPrdPicture.mime + ';base64,' + item.demoPrdPicture.content + '"/>' : '') +
-          '<h1>' + item.demoPrdName + '</h1>' +
-          '<h2>' + item.demoPrdReference + ' (' + prd.getFieldListValue('demoPrdType', item) + ')</h2>' +
-          '<p>' + item.demoPrdDescription + '</p>' +
+          (item.demoPrdPicture ? `<img alt="Picture" src="data:${item.demoPrdPicture.mime};base64,${item.demoPrdPicture.content}"/>` : '') +
+          `<h1>${item.demoPrdName}</h1>` +
+          `<h2>${item.demoPrdReference} (${prd.getFieldListValue('demoPrdType', item)})</h2>` +
+          `<p>${item.demoPrdDescription}</p>` +
         '</li>';
     l += '</ul>';
     elt('products', l);
@@ -54,7 +54,7 @@ app.login({ username: 'website', password: 'simplicite' }).then(user => {
   return app.getGrant();
 }).then(grant => {
   app.debug(grant);
-  elt('message', 'Hello ' + grant.getLogin());
+  elt('message', `Hello ${grant.getLogin()}`);
   // Get object
   prd = app.getBusinessObject('DemoProduct');
   // Get product object's metadata
