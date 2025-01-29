@@ -9,6 +9,7 @@ module.exports = {
     publicPath: 'auto'
   },
   devServer: {
+    allowedHosts: 'all',
     port: 3000
   },
   module: {
