@@ -13,8 +13,8 @@ import simplicite from 'simplicite';
 // Explicit URL needed for a standalone deployment, remove it when deploying in Simplicité
 const app = simplicite.session({ url: 'https://demo.dev2.simplicite.io', debug: false });
 
-app.info(`Version: ${simplicite.constants.MODULE_VERSION}`);
-app.debug(app.parameters);
+app.info(`Version: ${app.getModuleVersion()}`);
+elt('version', app.getModuleVersion());
 
 let prd;
 
