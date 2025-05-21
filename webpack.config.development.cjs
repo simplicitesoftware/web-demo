@@ -15,7 +15,13 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.less$/i,
+        test: /\.m?js$/,
+        resolve: {
+          fullySpecified: false,
+        }
+      },
+      {
+        test: /\.less$/,
         use: [
           { loader: 'style-loader' },
           { loader: 'css-loader' },

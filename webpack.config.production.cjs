@@ -11,6 +11,12 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.m?js$/,
+        resolve: {
+          fullySpecified: false,
+        }
+      },
+      {
         test: /\.less$/i,
         use: [
           { loader: 'style-loader' },
