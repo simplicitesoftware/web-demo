@@ -1,4 +1,4 @@
-![Simplicit&eacute; Software](https://platform.simplicite.io/logos/logo250-grey.png)
+![Simplicité Software](https://platform.simplicite.io/logos/logo250-grey.png)
 * * *
 
 Web demo
@@ -44,7 +44,7 @@ npm run serve
 License
 =======
 
-Copyright 2018-2024 Simplicit&eacute; Software
+Copyright 2018-2024 Simplicité Software
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
