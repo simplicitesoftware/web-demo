@@ -35,8 +35,8 @@
   },
   "scripts": {
     "ncu": "ncu",
-    "eslint": "eslint *.cjs *.mjs src/**/*.js",
-    "stylelint": "stylelint src/**/*.less",
+    "eslint": "eslint \"*.cjs\" \"*.mjs\" \"src/**/*.js\"",
+    "stylelint": "stylelint \"src/**/*.less\"",
     "lint": "npm run eslint && npm run stylelint",
     "start": "webpack serve --config=webpack.config.development.cjs",
     "build": "npm run lint && webpack --config=webpack.config.production.cjs",
