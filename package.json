@@ -28,7 +28,7 @@
     "style-loader": "^4.0.0",
     "css-loader": "^7.1.2",
     "less-loader": "^12.3.0",
-    "@ffflorian/jszip-cli": "^3.8.11"
+    "@ffflorian/jszip-cli": "^3.10.1"
   },
   "engines": {
     "node": ">=18"
