@@ -14,21 +14,21 @@
   "devDependencies": {
     "@eslint/js": "10.0.1",
     "acorn": "8.16.0",
-    "eslint": "10.0.3",
+    "eslint": "10.1.0",
     "globals": "17.4.0",
-    "stylelint": "17.4.0",
+    "stylelint": "17.6.0",
     "stylelint-config-standard": "40.0.0",
     "postcss-less": "6.0.0",
-    "npm-check-updates": "19.6.3",
+    "npm-check-updates": "19.6.6",
     "serve": "14.2.6",
     "webpack": "5.105.4",
-    "webpack-cli": "6.0.1",
+    "webpack-cli": "7.0.2",
     "webpack-dev-server": "5.2.3",
-    "less": "4.5.1",
+    "less": "4.6.4",
     "style-loader": "4.0.0",
     "css-loader": "7.1.4",
-    "less-loader": "12.3.1",
-    "@ffflorian/jszip-cli": "3.15.3"
+    "less-loader": "12.3.2",
+    "@ffflorian/jszip-cli": "3.16.1"
   },
   "engines": {
     "node": ">=18"
