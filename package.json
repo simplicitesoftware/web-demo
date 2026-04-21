@@ -19,7 +19,7 @@
     "stylelint": "17.8.0",
     "stylelint-config-standard": "40.0.0",
     "postcss-less": "6.0.0",
-    "npm-check-updates": "21.0.2",
+    "npm-check-updates": "21.0.3",
     "serve": "14.2.6",
     "webpack": "5.106.2",
     "webpack-cli": "7.0.2",
